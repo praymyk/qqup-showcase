@@ -75,6 +75,18 @@ private source repository
 
 설계 배경과 작업 흐름은 [AGENTS.md 계층과 바이브 코딩 운영](docs/vibe-coding-workflow.md)에서 확인할 수 있다. 이 쇼케이스의 `AGENTS.md`는 제품 개발 규칙이 아니라 공개 문서의 사실성과 안전만 관리한다.
 
+## 재현 가능한 개발환경
+
+다중 서비스의 실행 방법을 개인 IDE 상태에만 남기지 않는다. CLI 스크립트를 단일 원본으로 유지하고 IntelliJ IDEA의 프로젝트 Run 설정은 같은 명령을 호출하는 얇은 어댑터로 Git에서 관리한다.
+
+- 도구 버전과 잠금 파일을 기준으로 신규 환경을 준비
+- PostgreSQL·Redis의 healthcheck 통과 후 애플리케이션 실행
+- 전체 서비스와 Web·API·AI 개별 실행 경로 제공
+- 개인 절대 경로와 실제 환경 변수는 공유 설정에서 제외
+- 로컬 실행과 CI 품질 검사가 같은 스크립트를 사용
+
+설계 이유, 실행 순서와 트레이드오프는 [재현 가능한 로컬 개발환경과 IDE 협업](docs/reproducible-development-environment.md)에서 설명한다.
+
 ## 주요 기술 판단
 
 ### AI 프로젝트지만 AI부터 구현하지 않는다
@@ -116,6 +128,7 @@ M2의 첫 세로 기능이 실제로 완료된 뒤 테스트 데이터로 만든
 
 - [상위 아키텍처](docs/architecture.md)
 - [AGENTS.md 계층과 바이브 코딩 운영](docs/vibe-coding-workflow.md)
+- [재현 가능한 로컬 개발환경과 IDE 협업](docs/reproducible-development-environment.md)
 - [공개 범위와 갱신 기준](docs/portfolio-scope.md)
 
 제품 소스가 private라는 사실은 보안 대책이 아니다. 실제 자격 증명과 사용자 데이터는 private 저장소에도 커밋하지 않으며, 이 저장소에는 공개 검토에 안전한 정보만 유지한다.
