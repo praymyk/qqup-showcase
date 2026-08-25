@@ -75,6 +75,8 @@ private source repository
 
 설계 배경과 작업 흐름은 [AGENTS.md 계층과 바이브 코딩 운영](docs/vibe-coding-workflow.md)에서 확인할 수 있다. 이 쇼케이스의 `AGENTS.md`는 제품 개발 규칙이 아니라 공개 문서의 사실성과 안전만 관리한다.
 
+반복 구현 절차는 완전 자율화하지 않고, 한 명의 작성자와 조건부 독립 검증자, worktree 격리, 문서 동기화와 사람의 병합 승인을 결합한 최소 루프로 구성했다. 선택한 구성과 의도적으로 제외한 자동화, 실제 사용법은 [개인 개발자를 위한 최소 AI 개발 루프](docs/minimum-viable-ai-loop.md)에서 설명한다.
+
 ## 주요 기술 판단
 
 ### AI 프로젝트지만 AI부터 구현하지 않는다
@@ -116,6 +118,7 @@ M2의 첫 세로 기능이 실제로 완료된 뒤 테스트 데이터로 만든
 
 - [상위 아키텍처](docs/architecture.md)
 - [AGENTS.md 계층과 바이브 코딩 운영](docs/vibe-coding-workflow.md)
+- [개인 개발자를 위한 최소 AI 개발 루프](docs/minimum-viable-ai-loop.md)
 - [공개 범위와 갱신 기준](docs/portfolio-scope.md)
 
 제품 소스가 private라는 사실은 보안 대책이 아니다. 실제 자격 증명과 사용자 데이터는 private 저장소에도 커밋하지 않으며, 이 저장소에는 공개 검토에 안전한 정보만 유지한다.
