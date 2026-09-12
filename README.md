@@ -4,6 +4,8 @@
 
 이 저장소는 qqup의 공개 포트폴리오다. 실제 제품 소스와 상세 내부 문서는 private 저장소에서 관리하며, 여기에는 공개 가능한 설계 의도, 검증된 진행 상태와 시각 자료만 선별해 기록한다.
 
+아래 프로젝트 전반 현황은 2026-09-04 확인 기록이다. 이후 갱신한 이미지 워커의 최초 등록·요청별 인증·두 개발 서버 연결은 [이미지 워커 연결 흐름](docs/image-worker-connection-lifecycle.md)에 2026-09-13 기준으로 별도 정리했다.
+
 | 항목          | 현재 상태                                                                                 |
 | ------------- | ----------------------------------------------------------------------------------------- |
 | 프로젝트 단계 | M1 플랫폼 골격·M2 작가 스튜디오 완료, M4 로컬 이미지 생성과 M5 회차 발행 기반 구현        |
@@ -113,6 +115,8 @@ private source repository
 
 실제 구현에서 lease·멱등성·재시작 복구와 큐 전환 경계를 어떻게 나눴는지는 [Local-first Image Worker 사례 연구](docs/local-first-image-worker.md)에 정리했다.
 
+워커 토큰을 누가 발급하고 어디에 보관하는지, 재시작과 이미지 요청 때 어떤 인증이 일어나는지는 [이미지 워커 연결: 최초 등록부터 요청별 인증까지](docs/image-worker-connection-lifecycle.md)에서 이벤트 순서와 함께 설명한다. 초기 로컬 수동 선택과 달라진 현재 단일 결과 자동 업로드 흐름도 구분했다.
+
 ## 로드맵
 
 | 마일스톤              | 상태 | 목표                                                        |
@@ -136,6 +140,7 @@ M2 화면은 구현됐지만 공개용 스크린샷과 영상은 아직 선별�
 
 - [상위 아키텍처](docs/architecture.md)
 - [Local-first Image Worker 사례 연구](docs/local-first-image-worker.md)
+- [이미지 워커 연결: 최초 등록부터 요청별 인증까지](docs/image-worker-connection-lifecycle.md)
 - [AGENTS.md 계층과 바이브 코딩 운영](docs/vibe-coding-workflow.md)
 - [재현 가능한 로컬 개발환경과 IDE 협업](docs/reproducible-development-environment.md)
 - [개인 개발자를 위한 최소 AI 개발 루프](docs/minimum-viable-ai-loop.md)
