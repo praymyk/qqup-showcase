@@ -1,5 +1,7 @@
 # qqup
 
+2026-10-07 후속 사례: 사용자 외형 설명을 이미지 생성 입력으로 옮기는 [단일 AI 의도 처리 경로](docs/visual-intent-pipeline.md)를 추가했다. Gemini의 해석·영어 작성과 Core의 검증·작업 등록, Worker의 GPU 실행을 이벤트 순서로 설명한다. 아래 초기 시스템 그림의 후속 AI 계획 중 이미지용 외형 처리는 구현됐으며, 원고 모순 검사는 여전히 별도 후속 범위다.
+
 2026-10-01 후속 사례: 캐릭터 특징을 분류해 입력받고 등록 선택값과 이전 정리 결과를 재사용하는 [프롬프트 준비 비용 최적화](docs/local-first-image-worker.md#후속-입력-개선-분류와-등록-표현-재사용)를 추가했다. 외부 AI 호출 생략을 검증했으며 실측 토큰 절감률을 주장하지 않는다.
 
 > 소설의 원고, 캐릭터 설정과 분기·재합류하는 사건 흐름을 하나의 작업 공간에서 관리하고, 이후 근거 기반 AI 일관성 검사와 로컬 이미지 생성을 연결하는 개인 웹 서비스 프로젝트
@@ -140,6 +142,7 @@ M2 화면은 구현됐지만 공개용 스크린샷과 영상은 아직 선별�
 
 ## 포트폴리오 문서
 
+- [사용자 외형 의도를 이미지 생성 입력으로 옮기는 AI 서비스](docs/visual-intent-pipeline.md)
 - [상위 아키텍처](docs/architecture.md)
 - [Local-first Image Worker 사례 연구](docs/local-first-image-worker.md)
 - [AGENTS.md 계층과 바이브 코딩 운영](docs/vibe-coding-workflow.md)
